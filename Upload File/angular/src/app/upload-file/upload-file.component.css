@@ -1,0 +1,11 @@
+.tableClass {
+    padding-top: 20px;
+}
+
+.row {
+    height: 30px;
+}
+
+.column {
+    display: inline-block;
+}

@@ -1,0 +1,31 @@
+<button mat-raised-button
+    color="primary"
+    (click)="openUploadDialog()">
+    Upload Csv File
+</button>
+<div>
+    <div *ngIf="uploadSuccessfully">
+        <div class="tableClass"
+            *ngFor="let file of parsedFilesResult.resultList">
+            <div *ngIf="file.success">
+                <div class="mat-elevation-z8">
+                    <div class="row" 
+                        *ngIf="file.parsedCsvContent.header">
+                        <div class="column" *ngFor="let col of file.parsedCsvContent.header.columns">
+                            | {{col.value}} |
+                        </div>  
+                        <mat-divider></mat-divider>                      
+                    </div> 
+                    <div class="row" *ngFor="let row of file.parsedCsvContent.rows">
+                        <div class="column" *ngFor="let column of row.columns">
+                            | {{column.value}} |
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+            <div *ngIf="!file.success">
+                {{file.errorMessage}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+.add-files-btn {
+    float: right;
+}
+
+.actions {
+    justify-content: flex-end;
+}
+
+.container {
+    height: 100%;
+}
