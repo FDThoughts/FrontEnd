@@ -1,0 +1,17 @@
+<div class="p-2 bg-info text-white">
+    <input
+        class="form-control-sm"
+        style="width:15em"
+        placeholder="Enter search term"
+        [(ngModel)]="service.filter.search"
+        (ngModelChange)="getSearchItems()"
+    />
+    <button class="btn btn-sm btn-primary"
+        (click)="service.getProducts()"
+    >
+        <i class="fas fa-search" 
+            aria-hidden="true">
+        </i>
+    </button>
+    <span class="ml-3">{{searchLabel}}</span>
+</div>
